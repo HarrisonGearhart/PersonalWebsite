@@ -6,7 +6,7 @@ body {
 }
 
 a {
-    color: #2B9348; /* forest green links */
+    color: #E9C46A; /* forest green links */
     text-decoration: none;
 }
 
@@ -25,13 +25,13 @@ header {
     background-color: #2B9348; /* forest green */
     text-align: center;
     padding: 40px 20px;
-    color: white;
+    color: #E9C46A;
 }
 
 .profile-pic {
     width: 150px;
     border-radius: 50%;
-    border: 4px solid #80B918; /* lime border */
+    border: 4px solid #E9C46A; /* lime border */
 }
 
 .tagline {

@@ -1,108 +1,90 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
-    background-color: #E9C46A; /* warm yellow background */
-    color: #1B1B1B; /* dark text for readability */
-}
-
-a {
-    color: #E9C46A; /* warm yellow links */
-    text-decoration: none;
-}
-
-a:hover {
-    color: #80B918; /* lime green hover */
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #2B9348; /* forest green */
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .hero {
+    background-image: url('images/profile.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 40px 20px;
-    color: #E9C46A;
-}
-
-.profile-pic {
-    width: 150px;
-    border-radius: 50%;
-    border: 4px solid #E9C46A; /* lime border */
-}
-
-.tagline {
-    font-style: italic;
-    color: #E9C46A; /* warm yellow tagline text */
-}
-
-section {
-    margin: 40px 0;
-}
-
-h2 {
-    color: #2B9348; /* forest green titles */
-    border-bottom: 2px solid #80B918; /* lime green underline */
-    padding-bottom: 10px;
-}
-
-.portfolio .project {
-    background-color: #55A630; /* bright green */
     color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.project img {
+    position: relative;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    height: auto;
-    max-width: 300px; /* keeps it readable and nicely sized */
-    display: block;
-    margin: 0 auto 10px auto; /* centers the image */
-    border-radius: 10px;
-}
-
-.resume a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #2B9348;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+  }
+  
+  .nav-links a {
     color: white;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.resume a:hover {
-    background-color: #80B918;
-}
-
-footer {
-    background-color: #1B1B1B; /* timeless noir */
-    color: #E9C46A; /* warm yellow text */
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer a {
-    color: #80B918; /* lime green footer links */
-    text-decoration: none;
     margin: 0 10px;
-}
-
-footer a:hover {
-    color: #55A630; /* bright green on hover */
-}
-
-@media (max-width: 600px) {
-    .project {
-        padding: 10px;
-    }
-
-    .profile-pic {
-        width: 100px;
-    }
-}
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    color: #0dcaf0;
+  }
+  
+  section {
+    padding: 60px 20px;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    color: #222;
+  }
+  
+  .carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer a {
+    color: #0dcaf0;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #66d3fa;
+  }
+  

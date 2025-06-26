@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harrison Gearhart | Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="images/profile.jpg" alt="Professional Headshot" class="profile-pic">
-            <h1>Harrison Gearhart</h1>
-            <p class="tagline">Full Stack Developer | Passionate About Building Impactful Digital Experiences</p>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="display-3">Harrison Gearhart</h1>
+      <p class="lead">Full Stack Developer | Building Impactful Digital Experiences</p>
+    </div>
+  </header>
 
-    <section class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I’m currently a Full-Stack Software Engineering student at Atlas School, a rigorous 20-month, peer-driven program based in Tulsa, Oklahoma. With a strong foundation in HTML, CSS, JavaScript, and Python, I’m focused on building clean, responsive web applications and learning how to solve real-world problems through code.
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+      I’m currently a Full-Stack Software Engineering student at Atlas School. With a strong foundation in HTML, CSS, JavaScript, and Python, I focus on building clean, responsive web applications and solving real-world problems through code.
+      I’m passionate about collaborative development and interactive front-end design, aiming to contribute meaningful solutions to mission-driven teams.
+    </p>
+  </section>
 
-                I’m especially passionate about collaborative, creative development — whether that’s through building tools that improve user experience or experimenting with interactive front-end design. I’m excited to keep sharpening my skills and grow into a developer who contributes meaningful solutions to a mission-driven engineering team.
-            </p>
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/Hang.jpg" class="d-block w-100" alt="Hangman Game">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Hangman</h5>
+            <p>Classic Hangman recreated using HTML, CSS, and JavaScript.</p>
+            <a href="https://github.com/HarrisonGearhart/Hangman2" class="btn btn-primary">GitHub</a>
+            <a href="https://harrisongearhart.github.io/Hangman2/" class="btn btn-light">Live Site</a>
+          </div>
         </div>
-    </section>
+        <div class="carousel-item">
+          <img src="images/SC.jpg" class="d-block w-100" alt="SoundCanvas">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>SoundCanvas</h5>
+            <p>Interactive web music experience using HTML, CSS, Bootstrap, and JS.</p>
+            <a href="https://github.com/Zytronium/soundCanvas" class="btn btn-primary">GitHub</a>
+            <a href="https://zytronium.github.io/soundCanvas/" class="btn btn-light">Live Site</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
 
-    <section class="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="project">
-                <img src="images/Hang.jpg" alt="Project Screenshot">
-                <h3>Hangman</h3>
-                <p>I recreated the classic wordgame, Hangman, using HTML, CSS, and JavaScript.</p>
-                <a href="https://github.com/HarrisonGearhart/Hangman2">GitHub README</a> |
-                <a href="https://harrisongearhart.github.io/Hangman2/">Live Site</a>
-            </div>
-            <div class="project">
-                <img src="images/SC.jpg" alt="Project Screenshot">
-                <h3>SoundCanvas</h3>
-                <p>An interactive web-based music experience where you can create sounds and music through visual interactions.
-                    Created with CSS, bootstrap, html, and JavaScript.
-                </p>
-                <a href="https://github.com/Zytronium/soundCanvas">GitHub README</a> |
-                <a href="https://zytronium.github.io/soundCanvas/">Live Site</a>
-            </div>
-        </div>
-    </section>
+  <section id="resume" class="container">
+    <h2>Resume</h2>
+    <a href="images/resume.pdf" class="btn btn-dark" download>Download PDF Resume</a>
+  </section>
 
-    <section class="resume">
-        <div class="container">
-            <h2>Resume</h2>
-            <a href="images/resume.pdf" download>Download PDF Resume</a>
-        </div>
-    </section>
+  <section id="contact" class="container">
+    <h2>Connect with Me</h2>
+    <p>Email: <a href="mailto:hgearhart98@gmail.com">hgearhart98@gmail.com</a></p>
+    <p>
+      <a href="https://github.com/HarrisonGearhart">GitHub</a> |
+      <a href="https://www.linkedin.com/in/harrison-gearhart-974264243/">LinkedIn</a>
+    </p>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>Connect with me</p>
-            <a href="https://github.com/HarrisonGearhart">GitHub</a> |
-            <a href="https://www.linkedin.com/in/harrison-gearhart-974264243/">LinkedIn</a> |
-            <a href="hgearhart98@gmail.com">hgearhart98@gmail.com</a>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Harrison Gearhart</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

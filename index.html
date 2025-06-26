@@ -2,85 +2,434 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Harrison Gearhart | Developer</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    a {
+      color: #0dcaf0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover, a:focus {
+      color: #0a9bcf;
+      text-decoration: underline;
+    }
+
+    /* Header / Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('images/profile.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 90%;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* Nav links */
+    .nav-links {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      gap: 15px;
+    }
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #0dcaf0;
+      background-color: rgba(255, 255, 255, 0.15);
+      outline: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      color: #222;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* Portfolio Carousel */
+    #projectCarousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      flex-shrink: 0;
+      position: relative;
+      color: white;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 20px;
+      border-radius: 8px;
+    }
+
+    .carousel-caption h5 {
+      margin: 0 0 8px 0;
+      font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+      margin: 0 0 12px 0;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+      border: none;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+      margin-right: 8px;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      color: white;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #0b5ed7;
+      outline: none;
+      color: white;
+    }
+
+    .btn-light {
+      background-color: #f8f9fa;
+      color: #212529;
+      border: 1px solid #ced4da;
+    }
+    .btn-light:hover, .btn-light:focus {
+      background-color: #e2e6ea;
+      outline: none;
+    }
+
+    /* Carousel controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .carousel-control-prev {
+      left: 10px;
+    }
+    .carousel-control-next {
+      right: 10px;
+    }
+
+    /* Arrows */
+    .carousel-control-prev::before,
+    .carousel-control-next::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-top: 3px solid white;
+      border-right: 3px solid white;
+    }
+
+    .carousel-control-prev::before {
+      transform: rotate(-135deg);
+    }
+    .carousel-control-next::before {
+      transform: rotate(45deg);
+    }
+
+    /* Resume section button */
+    #resume a.btn-dark {
+      background-color: #212529;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    #resume a.btn-dark:hover, #resume a.btn-dark:focus {
+      background-color: #343a40;
+      outline: none;
+    }
+
+    /* Contact Section */
+    #contact {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #222;
+    }
+
+    #contact h2 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin: 15px 0;
+    }
+    #contact a {
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #0dcaf0;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #66d3fa;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 3px 6px;
+      }
+
+      .carousel-item img {
+        height: 250px;
+      }
+
+      section {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+      }
+
+      #contact {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
-    <div class="nav-links">
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
     <div class="hero-content">
-      <h1 class="display-3">Harrison Gearhart</h1>
-      <p class="lead">Full Stack Developer | Building Impactful Digital Experiences</p>
+      <h1>Harrison Gearhart</h1>
+      <p>Full Stack Developer | Building Impactful Digital Experiences</p>
     </div>
   </header>
 
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>
-      I’m currently a Full-Stack Software Engineering student at Atlas School. With a strong foundation in HTML, CSS, JavaScript, and Python, I focus on building clean, responsive web applications and solving real-world problems through code.
-      I’m passionate about collaborative development and interactive front-end design, aiming to contribute meaningful solutions to mission-driven teams.
-    </p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m currently a Full-Stack Software Engineering student at Atlas School. With a strong foundation in HTML, CSS, JavaScript, and Python, I focus on building clean, responsive web applications and solving real-world problems through code.
+        I’m passionate about collaborative development and interactive front-end design, aiming to contribute meaningful solutions to mission-driven teams.
+      </p>
+    </section>
 
-  <section id="portfolio" class="container">
-    <h2>Portfolio</h2>
-    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/Hang.jpg" class="d-block w-100" alt="Hangman Game">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Hangman</h5>
-            <p>Classic Hangman recreated using HTML, CSS, and JavaScript.</p>
-            <a href="https://github.com/HarrisonGearhart/Hangman2" class="btn btn-primary">GitHub</a>
-            <a href="https://harrisongearhart.github.io/Hangman2/" class="btn btn-light">Live Site</a>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div id="projectCarousel" aria-roledescription="carousel" aria-label="Project carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" data-index="0">
+            <img src="images/Hang.jpg" alt="Hangman Game" />
+            <div class="carousel-caption">
+              <h5><a href="https://harrisongearhart.github.io/Hangman2/" target="_blank" rel="noopener noreferrer">Hangman</a></h5>
+              <p>Classic Hangman recreated using HTML, CSS, and JavaScript.</p>
+              <a href="https://github.com/HarrisonGearhart/Hangman2" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://harrisongearhart.github.io/Hangman2/" class="btn btn-light" target="_blank" rel="noopener noreferrer">Live Site</a>
+            </div>
+          </div>
+          <div class="carousel-item" data-index="1" style="display:none;">
+            <img src="images/SC.jpg" alt="SoundCanvas" />
+            <div class="carousel-caption">
+              <h5><a href="https://zytronium.github.io/soundCanvas/" target="_blank" rel="noopener noreferrer">SoundCanvas</a></h5>
+              <p>Interactive web music experience using HTML, CSS, Bootstrap, and JS.</p>
+              <a href="https://github.com/Zytronium/soundCanvas" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://zytronium.github.io/soundCanvas/" class="btn btn-light" target="_blank" rel="noopener noreferrer">Live Site</a>
+            </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="images/SC.jpg" class="d-block w-100" alt="SoundCanvas">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>SoundCanvas</h5>
-            <p>Interactive web music experience using HTML, CSS, Bootstrap, and JS.</p>
-            <a href="https://github.com/Zytronium/soundCanvas" class="btn btn-primary">GitHub</a>
-            <a href="https://zytronium.github.io/soundCanvas/" class="btn btn-light">Live Site</a>
-          </div>
-        </div>
+        <button class="carousel-control-prev" aria-label="Previous project" type="button"></button>
+        <button class="carousel-control-next" aria-label="Next project" type="button"></button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
+    </section>
 
-  <section id="resume" class="container">
-    <h2>Resume</h2>
-    <a href="images/resume.pdf" class="btn btn-dark" download>Download PDF Resume</a>
-  </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <a href="images/resume.pdf" class="btn btn-dark" download>Download PDF Resume</a>
+    </section>
 
-  <section id="contact" class="container">
-    <h2>Connect with Me</h2>
-    <p>Email: <a href="mailto:hgearhart98@gmail.com">hgearhart98@gmail.com</a></p>
-    <p>
-      <a href="https://github.com/HarrisonGearhart">GitHub</a> |
-      <a href="https://www.linkedin.com/in/harrison-gearhart-974264243/">LinkedIn</a>
-    </p>
-  </section>
+    <section id="contact">
+      <h2>Connect with Me</h2>
+      <p>Email: <a href="mailto:hgearhart98@gmail.com">hgearhart98@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/HarrisonGearhart" target="_blank" rel="noopener noreferrer">GitHub</a> |
+        <a href="https://www.linkedin.com/in/harrison-gearhart-974264243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Harrison Gearhart</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Simple Carousel Logic (No dependencies)
+    (function() {
+      const carousel = document.getElementById('projectCarousel');
+      const items = carousel.querySelectorAll('.carousel-item');
+      const prevBtn = carousel.querySelector('.carousel-control-prev');
+      const nextBtn = carousel.querySelector('.carousel-control-next');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        items.forEach((item, i) => {
+          item.style.display = i === index ? 'block' : 'none';
+        });
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showSlide(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showSlide(currentIndex);
+      });
+
+      // Initialize
+      showSlide(currentIndex);
+    })();
+  </script>
 </body>
 </html>

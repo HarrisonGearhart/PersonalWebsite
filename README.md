@@ -6,7 +6,7 @@ This is the personal portfolio website of **Harrison Gearhart**, a Full-Stack So
 
 ## Live Demo
 
-[View Live Website](#) <!-- Replace with your live URL when hosted -->
+[View Live Website](https://harrisongearhart.github.io/PersonalWebsite/) <!-- Replace with your live URL when hosted -->
 
 ---
 

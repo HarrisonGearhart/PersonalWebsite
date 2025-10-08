@@ -1,60 +1,69 @@
-# 💼 Harrison Gearhart — Personal Portfolio Website
+# Harrison Gearhart | Professional Portfolio Website
 
-A sleek, responsive portfolio website built to showcase my development work, share my resume, and make it easy to connect professionally.
-
-🌐 **Live Site:** [https://harrisongearhart.github.io/PersonalWebsite/](https://harrisongearhart.github.io/PersonalWebsite/)
+This is the personal portfolio website of **Harrison Gearhart**, a Full-Stack Software Engineering student at Atlas School. The website showcases Harrison’s skills, projects, resume, and contact information, emphasizing clean, responsive design and professional presentation.
 
 ---
 
-## ✨ Features
+## Live Demo
 
-- 🎯 **Hero Landing Section** with name, title, and smooth-scroll nav  
-- 📖 **About Section** detailing professional background and goals  
-- 🎨 **Interactive Portfolio Carousel** displaying featured projects  
-- 📄 **Resume Section** with downloadable PDF  
-- 📬 **Contact Section** with email, GitHub, and LinkedIn links  
-- 🌓 **Darkened Overlay** for visual clarity on hero background image  
-- 📱 **Fully Responsive Design** optimized for mobile and desktop  
+[View Live Website](#) <!-- Replace with your live URL when hosted -->
 
 ---
 
-## 🛠️ Built With
+## Features
 
-- **HTML5**
-- **CSS3** (custom, no frameworks)
-- **JavaScript** (vanilla JS carousel logic)
-- **Accessibility Features** (ARIA labels for better screen reader support)
-- **Git & GitHub Pages** for version control and deployment
-
----
-
-## 🚀 Projects Featured
-
-| Project         | Tech Stack          | Description                                                                 |
-|-----------------|---------------------|-----------------------------------------------------------------------------|
-| **Hangman**     | HTML, CSS, JS       | A classic game recreated in a clean UI. [Live ↗](https://harrisongearhart.github.io/Hangman2/) |
-| **SoundCanvas** | HTML, CSS, JS, Bootstrap | Collaborative project focused on interactive audio. [Live ↗](https://zytronium.github.io/soundCanvas/) |
-
-> Each project includes both a **GitHub repo** and a **live demo**.
+- **About Me Section:** A brief professional introduction highlighting experience with front-end, back-end, and database development.  
+- **Resume Section:** Direct download link for PDF resume.  
+- **Skills Section:** Comprehensive overview of technical skills, including front-end, back-end, databases, and version control.  
+- **Projects Section:** Interactive carousel featuring major projects, with screenshots, descriptions, and GitHub links:
+  - **SoundCanvas:** Interactive music creation web app.  
+  - **Hangman Game:** Modern, responsive category-based Hangman game.  
+  - **The Joy of Painting API:** RESTful API serving structured Bob Ross painting episode data.  
+- **Contact Section:** Email, LinkedIn, and GitHub links for professional outreach.  
+- **Responsive Design:** Works on desktop, tablet, and mobile devices using Bootstrap 4.  
+- **Modern Typography:** Uses `Helvetica Neue` for a clean, professional aesthetic.
 
 ---
 
-## 🧠 Lessons & Goals
+## Technologies Used
 
-This project demonstrates my skills in:
-
-- Custom web design without reliance on external libraries
-- Responsive layout and visual hierarchy
-- DOM scripting for UI interaction (carousel navigation)
-- Clear, semantic HTML structure
-- Smooth UX through transitions and accessibility
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap 4  
+- **Backend / Full-Stack Experience:** Node.js, Python, Flask  
+- **Databases:** MySQL, PostgreSQL, MongoDB  
+- **Version Control & Collaboration:** Git, GitHub  
 
 ---
 
-## 📬 Contact
+## Installation & Local Development
 
-📧 Email: [hgearhart98@gmail.com](mailto:hgearhart98@gmail.com)  
-🔗 GitHub: [@HarrisonGearhart](https://github.com/HarrisonGearhart)  
-💼 LinkedIn: [Harrison Gearhart](https://www.linkedin.com/in/harrison-gearhart-974264243/)
+To run this project locally:
 
----
+1. Clone the repository:  
+    ```bash
+    git clone https://github.com/HarrisonGearhart/ProfessionalWebsite.git
+
+2. Navigate to the project directory:
+    ```bash
+    cd ProfessionalWebsite
+
+Open index.html in your preferred browser.
+
+No server setup is required for this static portfolio website.
+
+Project Structure
+bash
+Copy code
+ProfessionalWebsite/
+├─ images/               # Headshots, project screenshots, and background
+├─ docs/                 # Resume PDF
+├─ styles.css            # Main CSS stylesheet
+├─ index.html            # Main portfolio page
+└─ README.md             # Project documentation
+Contact
+Harrison Gearhart
+
+Email: hgearhart98@gmail.com
+
+LinkedIn: linkedin.com/in/harrison-gearhart-974264243
+
+GitHub: github.com/HarrisonGearhart

@@ -46,24 +46,22 @@ To run this project locally:
     ```bash
     cd ProfessionalWebsite
 
-Open index.html in your preferred browser.
+3. Open index.html in your preferred browser.
 
 No server setup is required for this static portfolio website.
 
-Project Structure
-bash
-Copy code
-ProfessionalWebsite/
-├─ images/               # Headshots, project screenshots, and background
-├─ docs/                 # Resume PDF
-├─ styles.css            # Main CSS stylesheet
-├─ index.html            # Main portfolio page
-└─ README.md             # Project documentation
-Contact
-Harrison Gearhart
+## Project Structure
+    ProfessionalWebsite/
+    ├─ images/               # Headshots, project screenshots, and background
+    ├─ docs/                 # Resume PDF
+    ├─ styles.css            # Main CSS stylesheet
+    ├─ index.html            # Main portfolio page
+    └─ README.md             # Project documentation
 
-Email: hgearhart98@gmail.com
+## Contact
 
-LinkedIn: linkedin.com/in/harrison-gearhart-974264243
+**Harrison Gearhart**  
 
-GitHub: github.com/HarrisonGearhart
+**Email:** hgearhart98@gmail.com  
+**LinkedIn:** [linkedin.com/in/harrison-gearhart-974264243](https://linkedin.com/in/harrison-gearhart-974264243)  
+**GitHub:** [github.com/HarrisonGearhart](https://github.com/HarrisonGearhart)  
